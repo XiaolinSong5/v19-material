@@ -1,0 +1,16 @@
+ <div class='main'>
+    <div class='search-container'>
+      <mat-form-field class='search-input' appearance='outline'>
+        <mat-label id="label-search">{{searchLabel}}</mat-label>
+        <mat-icon id="iconSearch" matPrefix>search</mat-icon>
+        <input type='search' id="searchTreeId"
+               aria-label='TreeNodeFilter' matInput
+               [formControl]='searchInTree' [matAutocomplete]='auto'>
+        <mat-autocomplete #auto='matAutocomplete'>
+          <mat-option *ngFor='let option of filteredOptions' [value]='option'>
+            {{option}}
+          </mat-option>
+        </mat-autocomplete>
+      </mat-form-field>
+    </div>
+  </div>
